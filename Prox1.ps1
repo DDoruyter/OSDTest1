@@ -14,7 +14,6 @@ Start-Sleep -Seconds 5
 
 # OSDCLOUD Module updaten...
 Write-Host  -ForegroundColor Red "Updating..."
-Install-Module OSD -Force
 Import-Module OSD -Force
 
 # OSDCLOUD ZTI koppelen
