@@ -20,7 +20,7 @@ Start-Sleep -Seconds 5
 
 #Write-Host -ForegroundColor Green "Importing OSD PowerShell Module"
 
-#Import-Module OSD -Force
+Import-Module OSD -Force
 
 #Start OSDCloud ZTI the RIGHT way
 
