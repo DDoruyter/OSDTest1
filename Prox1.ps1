@@ -18,7 +18,7 @@ Import-Module OSD -Force
 
 # OSDCLOUD ZTI koppelen
 Write-Host  -ForegroundColor Red "Start OSDCloud"
-Start-OSDCloud -OSLanguage nl-nl -OSVersion 'Windows 10' -OSBuild 21H2 -OSEdition Pro -OSlicense Enterprise -Firmware -ZTI
+Start-OSDCloud -OSLanguage nl-nl -OSVersion 'Windows 10' -OSBuild 21H2 -OSEdition Pro -OSlicense Retail -Firmware -ZTI
 
 # Windows autopilot koppelen
 Write-Host  -ForegroundColor Red "Start Connecting Autopilot" 
