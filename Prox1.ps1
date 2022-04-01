@@ -22,12 +22,10 @@ Start-OSDCloud -OSLanguage nl-nl -OSVersion 'Windows 10' -OSBuild 21H2 -OSEditio
 
 # Windows autopilot koppelen
 Write-Host  -ForegroundColor Red "Start Connecting Autopilot" 
-Install-Script -name Get-WindowsAutopilotInfo -Force
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
-Install-Module AutopilotOOBE -Force -Verbose
-Import-Module AutopilotOOBE -Force
-Start-AutopilotOOBE -Title 'j&s-soft Autopilot registration' -Assign -PostAction Restart
-Get-WindowsAutoPilotInfo -Online
+Install-Module AzureAD -Force
+Install-Module WindowsAutopilotIntune -Force
+Install-Module Microsoft.Graph.Intune -Force
+Connect-MSGraph
 
 #Opnieuw opstarten
 Write-Host  -ForegroundColor Red "Restarting in 10 seconds!"
