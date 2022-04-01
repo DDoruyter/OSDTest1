@@ -20,23 +20,6 @@ Import-Module OSD -Force
 Write-Host  -ForegroundColor Red "Start OSDCloud"
 Start-OSDCloud -OSLanguage nl-nl -OSVersion 'Windows 10' -OSBuild 21H2 -OSEdition Pro -OSlicense Enterprise -Firmware -ZTI
 
-function UpdateDrivers {
-        [CmdletBinding()]
-        param ()
-        if ($env:UserName -eq 'defaultuser0') {
-            Write-Host -ForegroundColor Red 'Updating Windows Drivers'
-            if (!(Get-Module PSWindowsUpdate -ListAvailable -ErrorAction Ignore)) {
-                try {
-                    Install-Module PSWindowsUpdate -Force -Scope CurrentUser
-                    Import-Module PSWindowsUpdate -Force -Scope Global
-                }
-                catch {
-                    Write-Warning 'Unable to install PSWindowsUpdate Driver Updates'
-                }
-            }
-            if (Get-Module PSWindowsUpdate -ListAvailable -ErrorAction Ignore) {
-                Start-Process -WindowStyle Minimized PowerShell.exe -ArgumentList "-Command Install-WindowsUpdate -UpdateType Driver -AcceptAll -IgnoreReboot" -Wait
-
 # Windows autopilot koppelen
 Write-Host  -ForegroundColor Red "Start Connecting Autopilot" 
 Install-Script -name Get-WindowsAutopilotInfo -Force
